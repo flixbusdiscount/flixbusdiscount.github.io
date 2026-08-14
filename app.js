@@ -7,7 +7,8 @@ const statusMessages = Array.from(document.querySelectorAll(".status-message"));
 const yearElement = document.querySelector("#year");
 
 const fallbackPrice = {
-  amount: 10,
+  amount: 5,
+  originalAmount: 10,
   currency: "USD",
   country: "unknown",
   discountPercent: 15,
@@ -39,7 +40,18 @@ function renderPrice(price) {
     return;
   }
 
-  priceElement.textContent = formatPrice(price);
+  const originalAmount = price.originalAmount || 10;
+  const originalPrice = formatPrice({ ...price, amount: originalAmount });
+  const salePrice = formatPrice(price);
+  const originalPriceElement = document.createElement("span");
+  const salePriceElement = document.createElement("span");
+
+  originalPriceElement.className = "old-price";
+  originalPriceElement.textContent = originalPrice;
+  salePriceElement.className = "sale-price";
+  salePriceElement.textContent = salePrice;
+
+  priceElement.replaceChildren(originalPriceElement, salePriceElement);
   if (discountValue) {
     discountValue.textContent = `${price.discountPercent || 15}% off`;
   }
