@@ -1,26 +1,63 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
-  <title id="title">Green intercity coach bus</title>
-  <desc id="desc">Original illustration of a green coach bus on a simple road.</desc>
+  <title id="title">Cartoon FlixBus and Greyhound buses</title>
+  <desc id="desc">Original cartoon illustration with a green FlixBus-style bus on the left, a blue Greyhound-style bus on the right, and a tilted divider between them.</desc>
   <defs>
-    <linearGradient id="bus" x1="92" x2="660" y1="72" y2="280" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#7bdc2d" />
-      <stop offset="1" stop-color="#39a900" />
+    <linearGradient id="left-bg" x1="0" x2="360" y1="0" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1ffe7" />
+      <stop offset="1" stop-color="#d9f8c7" />
     </linearGradient>
-    <linearGradient id="window" x1="160" x2="610" y1="100" y2="178" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#e7f8ff" />
-      <stop offset="1" stop-color="#aadff5" />
+    <linearGradient id="right-bg" x1="420" x2="760" y1="0" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#edf5ff" />
+      <stop offset="1" stop-color="#dfe9f7" />
+    </linearGradient>
+    <linearGradient id="flix-bus" x1="58" x2="345" y1="116" y2="268" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#87e33c" />
+      <stop offset="1" stop-color="#36aa00" />
+    </linearGradient>
+    <linearGradient id="grey-bus" x1="424" x2="716" y1="120" y2="268" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6f86a7" />
+      <stop offset="1" stop-color="#2e4059" />
+    </linearGradient>
+    <linearGradient id="window" x1="90" x2="660" y1="124" y2="184" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f0fbff" />
+      <stop offset="1" stop-color="#bce8fb" />
     </linearGradient>
   </defs>
-  <rect width="760" height="360" rx="34" fill="#f5f7ef" />
-  <path d="M86 255h588c18 0 32-14 32-32v-74c0-27-21-51-48-54L548 82H176c-32 0-60 21-69 52L78 235c-3 10 5 20 16 20Z" fill="url(#bus)" />
-  <path d="M158 111h382l88 11c20 3 36 20 36 41v14H130l17-48c2-10 6-18 11-18Z" fill="url(#window)" />
-  <path d="M168 130h74v47h-94l12-35c2-7 4-12 8-12Zm95 0h78v47h-78v-47Zm99 0h78v47h-78v-47Zm99 0h74v47h-74v-47Zm95 0 70 8c12 2 22 12 22 25v14h-92v-47Z" fill="#dff5ff" opacity=".95" />
-  <path d="M122 201h540" stroke="#137100" stroke-width="10" stroke-linecap="round" opacity=".35" />
-  <rect x="562" y="188" width="74" height="38" rx="10" fill="#f7fff2" opacity=".78" />
-  <circle cx="205" cy="255" r="49" fill="#111827" />
-  <circle cx="205" cy="255" r="24" fill="#f8fafc" />
-  <circle cx="574" cy="255" r="49" fill="#111827" />
-  <circle cx="574" cy="255" r="24" fill="#f8fafc" />
-  <path d="M62 305h636" stroke="#111827" stroke-width="9" stroke-linecap="round" opacity=".12" />
-  <path d="M91 286h121m402 0h53" stroke="#111827" stroke-width="12" stroke-linecap="round" opacity=".18" />
+
+  <rect width="760" height="360" rx="34" fill="#f8fafc" />
+  <path d="M0 0h414L347 360H0Z" fill="url(#left-bg)" />
+  <path d="M414 0h346v360H347Z" fill="url(#right-bg)" />
+  <path d="M390-20 424-10 370 380 336 370Z" fill="#ffffff" opacity=".95" />
+  <path d="M404-16 416-12 362 375 350 371Z" fill="#111827" opacity=".13" />
+
+  <g transform="translate(20 8)">
+    <path d="M46 246h295c14 0 25-11 25-25v-49c0-22-17-40-38-43l-53-8H94c-24 0-45 15-53 38L28 225c-3 11 5 21 18 21Z" fill="url(#flix-bus)" />
+    <path d="M86 141h186l48 7c13 2 23 13 23 26v10H62l9-29c2-9 7-14 15-14Z" fill="url(#window)" />
+    <path d="M93 154h51v30H80l6-21c1-6 3-9 7-9Zm65 0h53v30h-53v-30Zm67 0h46v30h-46v-30Zm61 1 30 4c7 1 12 7 12 14v11h-42v-29Z" fill="#eaffff" opacity=".93" />
+    <rect x="224" y="198" width="92" height="31" rx="10" fill="#efffe9" opacity=".82" />
+    <text x="270" y="219" fill="#1b7000" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="900" letter-spacing="1" text-anchor="middle">FLIXBUS</text>
+    <circle cx="112" cy="246" r="35" fill="#111827" />
+    <circle cx="112" cy="246" r="16" fill="#f8fafc" />
+    <circle cx="286" cy="246" r="35" fill="#111827" />
+    <circle cx="286" cy="246" r="16" fill="#f8fafc" />
+    <path d="M58 198h276" stroke="#177400" stroke-width="7" stroke-linecap="round" opacity=".32" />
+    <path d="M38 294h318" stroke="#111827" stroke-width="8" stroke-linecap="round" opacity=".11" />
+    <path d="M94 84c20-15 45-19 68-10" stroke="#54bf14" stroke-width="9" stroke-linecap="round" opacity=".35" />
+  </g>
+
+  <g transform="translate(384 10)">
+    <path d="M36 246h296c14 0 25-11 25-25v-48c0-23-17-42-40-45l-61-9H85c-22 0-42 14-50 35L18 225c-3 11 6 21 18 21Z" fill="url(#grey-bus)" />
+    <path d="M76 141h181l54 8c12 2 22 13 22 26v10H51l9-29c3-9 8-15 16-15Z" fill="url(#window)" />
+    <path d="M84 154h49v31H70l7-22c1-6 3-9 7-9Zm64 0h52v31h-52v-31Zm66 0h46v31h-46v-31Zm61 1 33 5c7 1 12 7 12 15v10h-45v-30Z" fill="#eaf7ff" opacity=".94" />
+    <rect x="205" y="198" width="116" height="31" rx="10" fill="#eef4fb" opacity=".86" />
+    <text x="263" y="219" fill="#26364f" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="900" letter-spacing=".6" text-anchor="middle">GREYHOUND</text>
+    <path d="M226 129c18-21 41-20 60-2" fill="none" stroke="#f7fbff" stroke-width="7" stroke-linecap="round" opacity=".75" />
+    <circle cx="101" cy="246" r="35" fill="#111827" />
+    <circle cx="101" cy="246" r="16" fill="#f8fafc" />
+    <circle cx="276" cy="246" r="35" fill="#111827" />
+    <circle cx="276" cy="246" r="16" fill="#f8fafc" />
+    <path d="M50 198h275" stroke="#dce6f3" stroke-width="7" stroke-linecap="round" opacity=".44" />
+    <path d="M33 294h319" stroke="#111827" stroke-width="8" stroke-linecap="round" opacity=".11" />
+    <path d="M236 78c27 0 52 10 72 29" stroke="#8298b9" stroke-width="9" stroke-linecap="round" opacity=".35" />
+  </g>
 </svg>

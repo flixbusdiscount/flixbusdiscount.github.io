@@ -2,7 +2,6 @@ const checkoutButtons = Array.from(document.querySelectorAll(".checkout-button")
 const priceElement = document.querySelector("#price");
 const currencyNote = document.querySelector("#currency-note");
 const discountValue = document.querySelector("#discount-value");
-const codeCount = document.querySelector("#code-count");
 const statusMessages = Array.from(document.querySelectorAll(".status-message"));
 const yearElement = document.querySelector("#year");
 
@@ -56,9 +55,6 @@ function renderPrice(price) {
   priceElement.replaceChildren(originalPriceElement, salePriceElement);
   if (discountValue) {
     discountValue.textContent = `${price.discountPercent || 15}% off`;
-  }
-  if (codeCount) {
-    codeCount.textContent = String(price.availableCodeCount || 1);
   }
   currencyNote.textContent = "Final price appears before payment.";
 }
