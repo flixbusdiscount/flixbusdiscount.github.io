@@ -11,6 +11,7 @@ const fallbackPrice = {
   currency: "USD",
   country: "unknown",
   discountPercent: 15,
+  priceDiscountPercent: 50,
   availableCodeCount: 1
 };
 
@@ -42,8 +43,10 @@ function renderPrice(price) {
   const originalAmount = price.originalAmount || 10;
   const originalPrice = formatPrice({ ...price, amount: originalAmount });
   const salePrice = formatPrice(price);
+  const priceDiscountPercent = price.priceDiscountPercent || 50;
   const originalPriceElement = document.createElement("span");
   const salePriceElement = document.createElement("span");
+  const saleBadgeElement = document.createElement("span");
 
   originalPriceElement.className = "old-price";
   originalPriceElement.textContent = originalPrice;
@@ -51,8 +54,10 @@ function renderPrice(price) {
   salePriceElement.className = "sale-price";
   salePriceElement.textContent = salePrice;
   salePriceElement.setAttribute("aria-label", `Sale price ${salePrice}`);
+  saleBadgeElement.className = "sale-badge";
+  saleBadgeElement.textContent = `${priceDiscountPercent}% off`;
 
-  priceElement.replaceChildren(originalPriceElement, salePriceElement);
+  priceElement.replaceChildren(originalPriceElement, salePriceElement, saleBadgeElement);
   if (discountValue) {
     discountValue.textContent = `${price.discountPercent || 15}% off`;
   }

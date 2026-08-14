@@ -294,6 +294,25 @@ main,
   font-weight: 900;
 }
 
+.sale-badge,
+.offer-summary .sale-chip {
+  color: #0f5d00;
+  background: #e6ffd8;
+}
+
+.offer-summary .sale-chip {
+  border-color: #b9ef9d;
+}
+
+.sale-badge {
+  padding: 4px 8px;
+  border: 1px solid #b9ef9d;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .price-inline strong,
 #price {
   color: var(--ink);
