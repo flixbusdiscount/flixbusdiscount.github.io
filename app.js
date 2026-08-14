@@ -1,17 +1,25 @@
 const checkoutButtons = Array.from(document.querySelectorAll(".checkout-button"));
 const priceElement = document.querySelector("#price");
 const currencyNote = document.querySelector("#currency-note");
+const discountValue = document.querySelector("#discount-value");
+const codeCount = document.querySelector("#code-count");
 const statusMessages = Array.from(document.querySelectorAll(".status-message"));
 const yearElement = document.querySelector("#year");
 
 const fallbackPrice = {
   amount: 10,
   currency: "USD",
-  country: "unknown"
+  country: "unknown",
+  discountPercent: 15,
+  availableCodeCount: 1
 };
 
 function getApiBase() {
   return window.FLIX_CODE_CONFIG?.apiBase?.replace(/\/$/, "") || "";
+}
+
+function getCheckoutUrl() {
+  return window.FLIX_CODE_CONFIG?.checkoutUrl || "";
 }
 
 function formatPrice(price) {
@@ -28,6 +36,12 @@ function renderPrice(price) {
   }
 
   priceElement.textContent = formatPrice(price);
+  if (discountValue) {
+    discountValue.textContent = `${price.discountPercent || 15}% off`;
+  }
+  if (codeCount) {
+    codeCount.textContent = String(price.availableCodeCount || 1);
+  }
   currencyNote.textContent =
     price.country && price.country !== "unknown"
       ? `Currency selected from your IP country: ${price.country}.`
@@ -55,8 +69,14 @@ async function loadPrice() {
 
   if (!apiBase || apiBase.includes("your-worker")) {
     renderPrice(fallbackPrice);
+    if (getCheckoutUrl()) {
+      setCheckoutDisabled(false);
+      setStatus("Checkout is enabled through the configured payment link.");
+      return;
+    }
+
     setCheckoutDisabled(true);
-    setStatus("Configure config.js with your Worker URL before accepting orders.");
+    setStatus("Checkout needs a Stripe Payment Link or Worker API URL before accepting orders.");
     return;
   }
 
@@ -76,6 +96,12 @@ async function loadPrice() {
 
 async function startCheckout() {
   const apiBase = getApiBase();
+  const checkoutUrl = getCheckoutUrl();
+
+  if ((!apiBase || apiBase.includes("your-worker")) && checkoutUrl) {
+    window.location.assign(checkoutUrl);
+    return;
+  }
 
   setCheckoutDisabled(true);
   setStatus("Creating secure checkout...");
