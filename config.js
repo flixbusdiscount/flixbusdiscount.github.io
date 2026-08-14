@@ -1,4 +1,4 @@
 window.FLIX_CODE_CONFIG = {
-  apiBase: "https://your-worker.your-subdomain.workers.dev",
+  apiBase: "https://flixbusdiscount-checkout.flixbusdiscount.workers.dev",
   checkoutUrl: ""
 };
