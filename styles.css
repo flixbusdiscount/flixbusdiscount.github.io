@@ -295,13 +295,21 @@ main,
 }
 
 .sale-badge,
-.offer-summary .sale-chip {
+.offer-summary .sale-chip,
+.offer-summary .guarantee-chip {
   color: #0f5d00;
   background: #e6ffd8;
 }
 
-.offer-summary .sale-chip {
+.offer-summary .sale-chip,
+.offer-summary .guarantee-chip {
   border-color: #b9ef9d;
+}
+
+.offer-summary .guarantee-chip {
+  color: #0f3f5d;
+  background: #dff5ff;
+  border-color: #a9def5;
 }
 
 .sale-badge {
