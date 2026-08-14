@@ -48,8 +48,10 @@ function renderPrice(price) {
 
   originalPriceElement.className = "old-price";
   originalPriceElement.textContent = originalPrice;
+  originalPriceElement.setAttribute("aria-label", `Original price ${originalPrice}`);
   salePriceElement.className = "sale-price";
   salePriceElement.textContent = salePrice;
+  salePriceElement.setAttribute("aria-label", `Sale price ${salePrice}`);
 
   priceElement.replaceChildren(originalPriceElement, salePriceElement);
   if (discountValue) {
