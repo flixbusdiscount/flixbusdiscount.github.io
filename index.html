@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Order an independent FlixBus and Greyhound discount code through secure checkout and reveal it after payment."
+      content="Order an independent 15% FlixBus and Greyhound voucher code through secure checkout and reveal it after payment."
     />
-    <title>RideCode Deals | FlixBus & Greyhound Discount Code Store</title>
+    <title>RideCode Deals | 15% Off FlixBus & Greyhound</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -26,146 +26,84 @@
     <main>
       <section class="hero-section">
         <div class="hero-copy-block">
-          <p class="eyebrow">Independent discount code marketplace</p>
-          <h1>Get 15% off your next FlixBus or Greyhound trip.</h1>
+          <p class="eyebrow">FlixBus + Greyhound</p>
+          <h1>15% off. No upper limit.</h1>
           <p class="hero-copy">
-            Order the 15% voucher code for FlixBus and Greyhound, return to the
-            confirmation page, and reveal the code after checkout. This is a 15%
-            discount code with no upper limit.
+            Buy one voucher code for FlixBus and Greyhound. The actual code is
+            revealed only after checkout.
           </p>
+
+          <div class="offer-summary" aria-label="Offer details">
+            <span>15% discount</span>
+            <span>No upper limit</span>
+            <span><strong id="code-count">1</strong> code available</span>
+          </div>
 
           <div class="cta-row">
             <button class="primary-button checkout-button" type="button">
-              Buy code now
+              Continue to checkout
             </button>
-            <a class="secondary-link" href="#how-it-works">See how it works</a>
+            <span class="price-inline">Price: <strong id="price">Loading...</strong></span>
           </div>
           <p class="status-message" role="status"></p>
         </div>
 
         <aside class="checkout-card" aria-live="polite">
-          <span class="price-label">Your price today</span>
-          <strong id="price">Loading...</strong>
-          <span id="currency-note">Detected from your IP location.</span>
-          <div class="discount-stats" aria-label="Discount details">
-            <div>
-              <span>Discount</span>
-              <strong id="discount-value">15% off</strong>
-            </div>
-            <div>
-              <span>Available code count</span>
-              <strong id="code-count">1</strong>
-            </div>
-          </div>
-          <div class="divider"></div>
+          <span class="price-label">What you get</span>
+          <h2>One private voucher code</h2>
           <ul class="check-list">
-            <li>Secure Stripe-hosted checkout</li>
-            <li>Code reveal after paid order</li>
-            <li>15% discount with no upper limit</li>
-            <li>No account required to purchase</li>
+            <li>Works for FlixBus and Greyhound bookings.</li>
+            <li>Use it at checkout under "Enter Voucher".</li>
+            <li>Click Redeem to apply the 15% discount.</li>
           </ul>
+          <p id="currency-note" class="quiet-note">Final price appears before payment.</p>
         </aside>
       </section>
 
-      <section class="notice-card" aria-label="Important notice">
-        <strong>Important:</strong> This site is independent and is not
-        affiliated with, endorsed by, or sponsored by FlixBus or Greyhound. Only
-        legitimate, transferable codes should be sold here.
-      </section>
-
       <section id="how-it-works" class="section-block">
-        <div class="section-heading">
-          <p class="eyebrow">Simple flow</p>
-          <h2>Three steps from order to savings.</h2>
+        <div class="section-heading compact">
+          <p class="eyebrow">How it works</p>
+          <h2>Simple and private.</h2>
         </div>
         <div class="details-grid">
           <article>
             <span class="step-number">1</span>
-            <h3>Start checkout</h3>
-            <p>
-              Start checkout for the 15% FlixBus and Greyhound voucher code.
-              The order price is 10 CAD, 10 EUR, or 10 USD.
-            </p>
+            <h3>Pay securely</h3>
+            <p>Start checkout and review the final price before payment.</p>
           </article>
           <article>
             <span class="step-number">2</span>
-            <h3>Verify payment</h3>
-            <p>
-              After payment, the confirmation page checks the Stripe session
-              before it reveals any code.
-            </p>
+            <h3>Reveal the code</h3>
+            <p>The confirmation page reveals the code after payment is verified.</p>
           </article>
           <article>
             <span class="step-number">3</span>
-            <h3>Use your code</h3>
-            <p>
-              On the official FlixBus or Greyhound checkout page, open Enter
-              Voucher, paste the code, and click Redeem.
-            </p>
+            <h3>Redeem it</h3>
+            <p>Enter the code in "Enter Voucher", then click Redeem.</p>
           </article>
-        </div>
-      </section>
-
-      <section class="section-block split-block">
-        <div>
-          <p class="eyebrow">Built for trust</p>
-          <h2>Clear terms before payment.</h2>
-          <p>
-            The checkout page shows the final price before you pay. The code is
-            delivered digitally after confirmation, and support is handled by the
-            store owner listed on the policy pages.
-          </p>
-        </div>
-        <div class="mini-cards">
-          <a href="refunds.html">Refund policy</a>
-          <a href="privacy.html">Privacy policy</a>
-          <a href="terms.html">Terms of sale</a>
         </div>
       </section>
 
       <section id="faq" class="section-block faq-block">
-        <div class="section-heading">
+        <div class="section-heading compact">
           <p class="eyebrow">FAQ</p>
-          <h2>Questions before you order.</h2>
+          <h2>Before you buy.</h2>
         </div>
         <details>
           <summary>When do I receive the code?</summary>
-          <p>
-            The code is shown on the success page after Stripe confirms the
-            checkout session is paid.
-          </p>
+          <p>The code is shown after payment is confirmed.</p>
         </details>
         <details>
           <summary>How do I apply the code?</summary>
-          <p>
-            During your FlixBus or Greyhound booking, go to the shopping cart,
-            enter the code in Enter Voucher, and click Redeem to apply it.
-          </p>
+          <p>During checkout, open "Enter Voucher", paste the code, and click Redeem.</p>
         </details>
         <details>
-          <summary>Is this an official FlixBus or Greyhound website?</summary>
+          <summary>Is this official?</summary>
           <p>
-            No. This is an independent store. It should not be represented as an
-            official FlixBus or Greyhound property or reseller without written
-            authorization.
+            No. This is an independent store and is not affiliated with,
+            endorsed by, or sponsored by FlixBus or Greyhound.
           </p>
         </details>
-        <details>
-          <summary>What if my code does not work?</summary>
-          <p>
-            Contact support with your Stripe receipt and order session ID. The
-            store owner should verify the issue and either provide a working
-            replacement code or refund the order according to the refund policy.
-          </p>
-        </details>
-      </section>
-
-      <section class="final-cta">
-        <p class="eyebrow">Ready?</p>
-        <h2>Order your code securely.</h2>
-        <button class="primary-button checkout-button" type="button">
-          Continue to checkout
-        </button>
       </section>
     </main>
 

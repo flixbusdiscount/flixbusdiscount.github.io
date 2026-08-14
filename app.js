@@ -42,10 +42,7 @@ function renderPrice(price) {
   if (codeCount) {
     codeCount.textContent = String(price.availableCodeCount || 1);
   }
-  currencyNote.textContent =
-    price.country && price.country !== "unknown"
-      ? `Currency selected from your IP country: ${price.country}.`
-      : "Fallback price shown until the payment API is configured.";
+  currencyNote.textContent = "Final price appears before payment.";
 }
 
 function setStatus(message) {
