@@ -22,6 +22,10 @@ function getCheckoutUrl() {
   return window.FLIX_CODE_CONFIG?.checkoutUrl || "";
 }
 
+function shouldUseApi(apiBase) {
+  return Boolean(apiBase && !apiBase.includes("your-worker"));
+}
+
 function formatPrice(price) {
   return new Intl.NumberFormat(undefined, {
     style: "currency",
@@ -64,7 +68,7 @@ async function loadPrice() {
 
   const apiBase = getApiBase();
 
-  if (!apiBase || apiBase.includes("your-worker")) {
+  if (!shouldUseApi(apiBase)) {
     renderPrice(fallbackPrice);
     if (getCheckoutUrl()) {
       setCheckoutDisabled(false);
@@ -95,7 +99,7 @@ async function startCheckout() {
   const apiBase = getApiBase();
   const checkoutUrl = getCheckoutUrl();
 
-  if ((!apiBase || apiBase.includes("your-worker")) && checkoutUrl) {
+  if (!shouldUseApi(apiBase) && checkoutUrl) {
     window.location.assign(checkoutUrl);
     return;
   }
@@ -124,6 +128,30 @@ async function startCheckout() {
   }
 }
 
+function trackVisit() {
+  const apiBase = getApiBase();
+
+  if (!shouldUseApi(apiBase)) {
+    return;
+  }
+
+  const payload = JSON.stringify({ path: window.location.pathname || "/" });
+  const url = `${apiBase}/api/track`;
+
+  if (navigator.sendBeacon) {
+    const blob = new Blob([payload], { type: "application/json" });
+    navigator.sendBeacon(url, blob);
+    return;
+  }
+
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: payload,
+    keepalive: true
+  }).catch(() => {});
+}
+
 checkoutButtons.forEach((button) => {
   button.addEventListener("click", startCheckout);
 });
@@ -133,3 +161,4 @@ if (yearElement) {
 }
 
 loadPrice();
+trackVisit();

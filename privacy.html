@@ -30,6 +30,8 @@
         </p>
         <ul class="policy-list">
           <li>The payment API uses IP-derived country data to choose currency.</li>
+          <li>Aggregate visit counts may be grouped by country, region, and page path.</li>
+          <li>IP addresses are not stored by the custom visit tracker.</li>
           <li>Stripe handles payment details and returns payment status.</li>
           <li>The Worker stores session-to-code delivery records when KV is used.</li>
           <li>No payment card data should be stored in this repository or Worker.</li>
